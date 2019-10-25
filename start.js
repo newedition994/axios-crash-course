@@ -1,83 +1,90 @@
-// GET Request
+// GET REQUEST
 function getTodos() {
   console.log("GET Request");
 }
 
-// Post Request
+// POST REQUEST
 function addTodo() {
   console.log("POST Request");
 }
 
-// PUT/PATCH Request
+// PUT/PATCH REQUEST
 function updateTodo() {
-  console.log("Update Request");
+  console.log("PUT/PATCH Request");
 }
 
-// DELETE Request
+// DELETE REQUEST
 function removeTodo() {
-  console.log("Delete Request");
+  console.log("DELETE Request");
 }
 
-// SIMULATANEOUS Data
+// SIMULTANEOUS DATA
 function getData() {
   console.log("Simultaneous Request");
 }
 
-// CUSTOM Headers
+// CUSTOM HEADERS
 function customHeaders() {
   console.log("Custom Headers");
 }
 
-// Transforming Requests & Responses
+// TRANSFORMING REQUESTS & RESPONSES
 function transformResponse() {
-  console.log("Transfom Response");
+  console.log("Transform Response");
 }
 
-// Error Handling
+// ERROR HANDLING
 function errorHandling() {
   console.log("Error Handling");
 }
 
-// CANCEL token
+// CANCEL TOKEN
 function cancelToken() {
   console.log("Cancel Token");
 }
 
+// INTERCEPTING REQUESTS & RESPONSES
+
+// AXIOS INSTANCES
+
 // Show output in browser
 function showOutput(res) {
   document.getElementById("res").innerHTML = `
-    <div class="card card-body mb-4">
-        <h5>Status: ${res.status}</h5>
+  <div class="card card-body mb-4">
+    <h5>Status: ${res.status}</h5>
+  </div>
+  <div class="card mt-3">
+    <div class="card-header">
+      Headers
     </div>
-
-    <div class="card mt-3">
-    <div class="card-header">Headers</div>
     <div class="card-body">
       <pre>${JSON.stringify(res.headers, null, 2)}</pre>
     </div>
   </div>
-
   <div class="card mt-3">
-      <div class="card-header">Data</div>
+    <div class="card-header">
+      Data
+    </div>
     <div class="card-body">
       <pre>${JSON.stringify(res.data, null, 2)}</pre>
     </div>
   </div>
-
   <div class="card mt-3">
-      <div class="card-header">Config</div>
+    <div class="card-header">
+      Config
+    </div>
     <div class="card-body">
       <pre>${JSON.stringify(res.config, null, 2)}</pre>
     </div>
   </div>
-    `;
+`;
 }
 
-// Event Listeners
+// Event listeners
 document.getElementById("get").addEventListener("click", getTodos);
-document.getElementById("add").addEventListener("click", addTodos);
-document.getElementById("update").addEventListener("click", updateTodos);
-document.getElementById("delete").addEventListener("click", removeTodos);
+document.getElementById("post").addEventListener("click", addTodo);
+document.getElementById("update").addEventListener("click", updateTodo);
+document.getElementById("delete").addEventListener("click", removeTodo);
 document.getElementById("sim").addEventListener("click", getData);
 document.getElementById("headers").addEventListener("click", customHeaders);
 document
